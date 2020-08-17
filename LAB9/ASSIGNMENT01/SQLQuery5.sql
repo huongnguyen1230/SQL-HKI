@@ -98,6 +98,9 @@ FROM SanPham sp
 JOIN DonHangChiTiet 
 ON sp.MaSP = DonHangChiTiet.MaSp
 --6.3, tong tien tung don hang--
+SELECT DonHangChiTiet.GiaBan, DonHangChiTiet.Soluong, DonHangChiTiet.MaSp,  AVG (GiaBan * SoLuong) AS [tong tien]
+FROM DonHangChiTiet
+GROUP BY GiaBan, Soluong, MaSp
 
 				--CAU 7--
 --7.1, Thay doi gia tien la duong (>0)--
