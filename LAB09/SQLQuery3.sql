@@ -92,5 +92,8 @@ GO
 
 --khach hang kem tien moi khach mua--
 CREATE VIEW Customer_V AS
-SELECT CustomerID, Price*Amount AS ['tien moi lan mua']
-FROM BOOKSOLD
+SELECT CustomerID, Price, Amount,
+SUM (Price*Amount) AS ['tien moi lan mua']
+FROM BOOKSOLD 
+GROUP BY CustomerID, Price, Amount
+ 
